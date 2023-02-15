@@ -13,7 +13,13 @@ So far what I have done is:
 2. For the billing part. I created using the GUI, but I also try the AWS CLI, with the json files on gitpod. I had some trouble at first with the syntax. Im not familiar with json files, but I created a budget and then delete it :-) 
 3. For the architectural design. I Use Lucidchart as instructured. I think it's easy to use and it's great that there are shape libraries for popular platforms like AWS. In the past I use Microsoft Visio and sometimes it was a little pain to import shapes and icons. So, this is really cool.
 
-So, here is my **Logical Design**. I know it's the same as the example, but, maybe I can modified later as we advance with the bootcamp.
+Here is my **Conceptual Design**. I didn't have a napkin but I use a paper towel during my lunch break. It's a little mess but the idea is there. 
+
+![Conceptual-design](https://user-images.githubusercontent.com/67177646/219129918-224cafa2-805f-4d6e-bc46-4119f3f93d25.jpeg)
+
+Here is the link for lucidchart: [Conceptual Design](https://lucid.app/lucidchart/bfaf1319-01ed-4481-acee-d43a7c027719/edit?viewport_loc=-89%2C182%2C2048%2C962%2C0_0&invitationId=inv_993eed86-c418-4e16-a966-9d5a596c266b)
+
+And here is my **Logical Design**. I know it's the same as the example, but, maybe I can modified later as we advance with the bootcamp.
 
 <img width="542" alt="Logical-Design" src="https://user-images.githubusercontent.com/67177646/219122002-845f8285-c713-4c6c-9de8-ed5fbdce5689.PNG">
 
