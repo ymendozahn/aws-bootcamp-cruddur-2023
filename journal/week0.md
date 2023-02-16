@@ -15,6 +15,20 @@ So far what I have done is:
 
 ## Required Homework
 
+### Admin user and secure account with MFA
+
+I created a IAM user with admin and billing priviledges using the built-in policies: 
++ **AdministratorAccess**, which provides full access to AWS services
++ **Billing**, which grants permissions for billing and cost management
+
+My admin IAM user is call **yuriman**. It's my nickname from college 🙂
+
+![IAM user](images/AdminUser02.PNG)
+
+I also secure it with a virtual MFA call [**Authy**](https://authy.com/). It's simple and user friendly MFA app.
+
+![IAM user with MFA enabled](images/AdminUser03.PNG)
+
 ### Install AWS CLI
 
 I didn't have any problems with it, just running fine. Here is the link to my [gitpod.yml](https://github.com/ymendozahn/aws-bootcamp-cruddur-2023/blob/61318ab0f599c0c6181d7959c2ed7f68e0c1a3a3/.gitpod.yml#L1-L10) file 
