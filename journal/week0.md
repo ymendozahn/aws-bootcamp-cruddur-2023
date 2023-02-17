@@ -48,13 +48,46 @@ And here is my **Logical Design**. I know it's the same as the example, but, may
 
 Here is the link for lucidchart: [Logical Design](https://lucid.app/lucidchart/ddfaf6f2-74a7-4d74-91a1-332448b12aae/edit?viewport_loc=-130%2C-13%2C2131%2C827%2CcbsxpdK4zMIe&invitationId=inv_9ca2c4c2-859f-49db-a63a-b4be8b03ac79)
 
+### Budget
+
+I created 2 Budgets. One Budget for 5 USD per month. The other one for the Credits. Off course I have to get some credits to see some results 🙂. Anyway I used the GUI for that.
+
+Here are my budgets
+
+ ![Budget for bootcamp](images/Budget01.PNG)
+
+### Billing Alarm
+
+For the Billing Alarm, I choose a estimate charge of 5 USD. I think I'm going to lower the ammount just to test it.
+
+![BillingAlarm](images/BillingAlarm01.PNG)
+
+## Homework Challenge
+
 ### Service Limits
 
-I search for the Free tier service limits on AWS services we are going to use for the project. I'll going to updated it as we advance with the bootcamp
+I search for the Free tier service limits on AWS services (US East Region) I'm going to use for the project. I'll going to updated it as we advance with the bootcamp. Remember you can use [AWS pricing calculator](https://calculator.aws/) for a better estimated on the costs.
 
  | AWS Service | Free Tier per month limit | Basic Pricing |
  | ----------- | ------------------------- | ------------- |
  | AppSync     | 250,000 query or data modification operations <br /> 250,000 real-time updates <br /> 600,000 connection-minutes | pricing is base on instance type and other factors. Details here |
- | | | |
+ | CloudFormation | 1,000 handler operations per month per account | Handler operation: $0.0009 per handler operation <br /> Handler operation duration: $0.00008 per second |
+ | CloudFront | 1 TB of Data Transfer Out <br /> 10,000,000 HTTP or HTTPS Requests <br /> 2,000,000 CloudFront Function Invocations | base on various factor. [Details here](https://aws.amazon.com/cloudfront/pricing/) |
+ | CloudTrail | 1 Free - Set up a trail that delivers a single copy of management events. | Management events delivered to Amazon S3 <br /> $2.00 per 100,000 management events delivered <br /><br /> Data events delivered to Amazon S3 <br /> $0.10 per 100,000 data events delivered <br /><br /> CloudTrail Insights <br /> $0.35 per 100,000 events analyzed |
+ | CloudWatch | 10 custom metrics and alarms <br /> 3 Dashboards with up to 50 Metrics Each | a little complex, but for reference in the US East Region: First 10,000 metrics: $0.30 per month [Details here](https://aws.amazon.com/cloudwatch/pricing/) |
+ | CodeBuild | 100 build minutes per month of build.general1.small compute type usage | AWS CodeBuild offers three compute instance types with different amounts of memory and CPU. Charges vary by the compute instance type that you choose for your build. [Detail here](https://aws.amazon.com/codebuild/pricing/) |
+ | CodeCommit | 5 active users per month <br /> 50 GB-month of storage per month <br /> 10,000 Git requests per month | Each additional active user beyond the first 5 $1.00 per month |
+ | CodePipeline | 1 Active Pipeline per month | princing has to be calculated with assistance |
+ | Cognito | 50,000 MAUs | 50,001-100,000 (after the 50,000 free tier): $0.0055 per MAU |
+ | Dynamo DB | 25GB of storage | too much detail to imput for calculate. [Details here](https://aws.amazon.com/dynamodb/pricing/) |
+ | EC2 (Elastic Cloud Computing) | 750 hours per month of Linux, RHEL, or SLES t2.micro or t3.micro instance dependent on region <br /> 750 hours per month of Windows t2.micro or t3.micro instance dependent on region | pricing is base on instance type and other factors. [Details here](https://aws.amazon.com/ec2/pricing/) |
+ | ECS (Elastic Container Registry) | 500 MB-month of Storage | Storage is $0.10 per GB / month for data stored in private or public repositories. |
+ | ELB (Elastic Load Balancer) | 750 Hours per month shared between Classic and Application load balancers <br /> 15 GB of data processing for Classic load balancers <br /> 15 LCUs for Application load balancers | For Application Load Balancers in the AWS Region: <br /> $0.0225 per Application Load Balancer-hour (or partial hour) <br /> $0.008 per LCU-hour (or partial hour) |
+ | **Fargate** | **none** | **it's a little complex. The pricing is calculated base on Compute, OS and storage configuration. [Details here](https://aws.amazon.com/fargate/pricing/).** |
+ | Lambda | 1 Million requests | ***x86 Price***: First 6 Billion GB-seconds / month <br /> ***Duration***: $0.0000166667 for every GB-second <br /> ***Requests***: $0.20 per 1M requests |
+ | RDS (Relational Database Service) | 750 hours in a db.t2.micro, db.t3.micro, and db.t4g.micro Instances, 20GB of Storage, and 20GB for Backups each month, for one year.| **Amazon Aurora (US East Region)** <br /> ***Storage Rate***: $0.10 per GB-month <br /> ***I/O Rate***: $0.20 per 1 million requests |
+ | **Route 53** | **none** | **$0.50 per hosted zone / month for the first 25 hosted zones <br /> $0.10 per hosted zone / month for additional hosted zones <br /><br /> Standard Queries <br /> $0.40 per million queries – first 1 Billion queries / month <br /> $0.20 per million queries – over 1 Billion queries / month** |
+ | S3 (Simple Storage Service) | 5 GB of Standard Storage | ***S3 Standard***: First 50TB / month : $0.023 per GB |
+ | SNS (Simple Notification Service) | 1 Million publishes <br /> 100,000 HTTP/S Deliveries <br /> 1,000 Email Deliveries | ***notifications***: $0.50 per million notifications <br /> ***Email/Email-JSON***: $2.00 per 100,000 notifications <br /> ***HTTP/s***: $0.60 per million notifications |
+ | SQS (Simple Queue Service) | 1,000,000 Requests | From 1 Million to 100 Billion Requests/Month <br /> Standard Queues (per Million requests): $0.40 <br /> FIFO Queues (per Million requests): $0.50 |
  
-
