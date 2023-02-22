@@ -22,4 +22,4 @@ Here is my [NotificationsFeedPage.js](https://github.com/ymendozahn/aws-bootcamp
 
 Here is my notifications page working
 
- ![frontend notifications](images/notificationPage.png)
+ ![frontend notifications](images/notificationsPage.png)
