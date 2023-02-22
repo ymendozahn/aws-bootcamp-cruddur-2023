@@ -2,6 +2,14 @@
 
 ## Required Homework
 
+### Spending considerations
+
+I understand all the free tier for gitpod and codespaces and I think I'll not surpass the free tier. For the AWS free tier, I have a cloudtrail enable just for the management logs. I made sure to disable data and insights records. 
+
+Here is my cloudtrail configuration
+
+![cloudtrail](images/cloudtrail01.png)
+
 ### Notification feature on app
 
 So, I follow alone the video for creating the notification feature. I added the npm install to the [gitpod.yml](https://github.com/ymendozahn/aws-bootcamp-cruddur-2023/blob/8000954e6616b8ad3b64e91f6edcb7475ae70599/.gitpod.yml#L11-L12) init section.
