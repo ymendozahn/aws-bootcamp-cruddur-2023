@@ -39,6 +39,14 @@ So, I follow alone the video for creating the notification feature. I added the 
 
 I'm not a programmer and my background is basically working with Infrastructure (Servers, Storage, Backups, basic networking, Virtualization).I didn't understand most of the API we edited. So, I had a little problem with identation and syntax errors,but manage to make it work.
 
+#### Open API
+
+We use the Open API for the endpoint services. We can document the api with readme.io so it can get documented. On the VS Code we can have a extension that helps us to explore the OpenAPI file.
+
+Here is example for the OpenAPI we use for the notifications page
+
+ ![openapi docs](images/openapi01.png)
+
 #### For the backend
 
 Here is my [notifications_activities.py](https://github.com/ymendozahn/aws-bootcamp-cruddur-2023/blob/main/backend-flask/services/notifications_activities.py) file
