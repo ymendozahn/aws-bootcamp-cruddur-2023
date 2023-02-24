@@ -75,6 +75,17 @@ Here is my notifications page working
  
   ![dynamoDB records](images/dynamodbQuery01.png)
   
+ Here is the test for the Postgres SQL connection
  
+  ![postgres records](images/postgreConnection.png)
+ 
+ Here is my database explorer extension working
+ 
+  ![databaseExplorer](images/databaseExplorer01.png)
+  
+  Basically I follow along with the instalation and configuration. It's really cool to know that we can easily have a database setup and running with docker containers. 
+  
+  So, that's about it for this part. 
+  
  
  
