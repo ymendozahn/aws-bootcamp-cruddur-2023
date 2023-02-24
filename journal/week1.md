@@ -69,7 +69,7 @@ Here is my notifications page working
  
  Here are my containers running
  
-  ![containers](images/posgres-dynamodb01.png
+  ![containers](images/posgres-dynamodb01.png)
  
  Here is my test for the dynamo db record tables
  
