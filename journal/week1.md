@@ -62,3 +62,19 @@ Here is my [NotificationsFeedPage.js](https://github.com/ymendozahn/aws-bootcamp
 Here is my notifications page working
 
  ![frontend notifications](images/NotificationsPage.png)
+ 
+ ### Posgres and dynamodb local
+ 
+ So I added to the docker [compose file](https://github.com/ymendozahn/aws-bootcamp-cruddur-2023/blob/9d3f6f86154a65c88b19ad458380b87f137d4487/docker-compose.yml#L20-L53) the posgres and dynamoDB local install code.
+ 
+ Here are my containers running
+ 
+  ![containers](images/posgres-dynamodb01.png
+ 
+ Here is my test for the dynamo db record tables
+ 
+  ![dynamoDB records](images/dynamodbQuery01.png)
+  
+ 
+ 
+ 
