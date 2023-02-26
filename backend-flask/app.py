@@ -29,14 +29,15 @@ processor = BatchSpanProcessor(OTLPSpanExporter())
 provider.add_span_processor(processor)
 
 # Shows in the logs within the backend-flask app 
-processor = SimpleSpanProcessor(ConsoleSpanExporter())
+simple_processor = SimpleSpanProcessor(ConsoleSpanExporter())
 provider.add_span_processor(simple_processor)
 
 trace.set_tracer_provider(provider)
 tracer = trace.get_tracer(__name__)
 
-# HONEYCOMB: Initialize automatic instrumentation with Flask
 app = Flask(__name__)
+
+# HONEYCOMB: Initialize automatic instrumentation with Flask
 FlaskInstrumentor().instrument_app(app)
 RequestsInstrumentor().instrument()
 
