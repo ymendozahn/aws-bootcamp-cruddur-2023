@@ -87,5 +87,71 @@ Here is my notifications page working
   
   So, that's about it for this part. 
   
+## Homework challenge
+
+### Deploying a EC2 Instance with docker
+
+In summary, I deployed a t2.micro instance and install docker engine. Then, I created a [Dockerfile]() that installs apache2 and copy a basic [index.html]() for testing.
  
+ #### Install docker engine in AMI 2 instance
  
+ 1. update your linux AMI with the latest updates
+
+     `$ sudo yum update `
+ 2. Install docker engine:
+
+     `$ sudo yum install docker `
+ 3. Add ec2-user or other to the docker group so you don't have to use `sudo` with every command:
+
+    `$ sudo usermod -a -G docker ec2-user` 
+ 4. Enable docker service
+
+    `$ sudo systemctl enable docker.engine`
+ 5. Start docker service
+
+    `$ sudo systemctl start docker.engine`
+ 6. Verify if docker is running
+ 
+     `$ sudo systemctl status docker.engine`
+
+#### Create dockerfile and deploy the website
+
+ 1. make a new dockerfile with the following code:
+
+    ```dockerfile
+    FROM rockylinux/rockylinux:latest
+
+    # Install apache2
+    RUN yum -y update && \
+    yum -y install httpd && \
+    yum clean all
+
+    # Copy the basic index file to the container
+    COPY index.html /var/www/html/index.html
+
+    # setup port and run apache server
+    EXPOSE 80
+    ENTRYPOINT /usr/sbin/httpd -DFOREGROUND
+    ```
+ 2. Build the docker image
+    
+    `$ docker build -t mysite .`
+    
+    ![docker-build](images/dockerOnAWS01.png)
+ 3. Run the docker image
+
+    ```
+    $ docker run -d -p 80:80 --name bootcampsite mysite
+    $ docker ps
+    ```
+    
+    ![docker-run](images/dockerOnAWS02.png)
+ 4. test the website
+
+    `$ curl 127.0.0.1:80`
+
+    ![test-site](images/dockerOnAWS03.png)
+    
+    ![test-site2](images/dockerOnAWS04.png)
+    
+Well, that's it. It works. Off course remember to open the port 80 on the security group of the EC2 instance, so you can test the site. 
