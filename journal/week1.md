@@ -91,7 +91,7 @@ Here is my notifications page working
 
 ### Deploying a EC2 Instance with docker
 
-In summary, I deployed a t2.micro instance and install docker engine. Then, I created a [Dockerfile]() that installs apache2 and copy a basic [index.html]() for testing.
+In summary, I deployed a t2.micro instance and install docker engine. Then, I created a [Dockerfile](https://github.com/ymendozahn/aws-bootcamp-cruddur-2023/blob/b47616808e9469e23736093379aef9cabd75b3ee/journal/assets/Dockerfile) that installs apache2 and copy a basic [index.html](https://github.com/ymendozahn/aws-bootcamp-cruddur-2023/blob/b47616808e9469e23736093379aef9cabd75b3ee/journal/assets/index.html) for testing.
  
  #### Install docker engine in AMI 2 instance
  
