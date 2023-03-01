@@ -3,11 +3,11 @@ from aws_xray_sdk.core import xray_recorder
 
 class NotificationsActivities:
   def run():
+    
+    now = datetime.now(timezone.utc).astimezone()
     # X-RAY --- segments ---
     segment = xray_recorder.begin_segment('notifications_activities')
-
-    now = datetime.now(timezone.utc).astimezone()
-    
+      
     # X-RAY --- Subsgements ---
     subsegment = xray_recorder.begin_subsegment('anotations')
     subsegment.put_annotation('id', 1234)
