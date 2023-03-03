@@ -87,5 +87,45 @@ So, I follow the video instructions and here is a summary of the steps
    
  ### AWS Cloudwatch logs configuration
  
+ So, for the cloudwatch logs here are the steps to get it up and running.
+
+1. We include the **watchtower** module into the backend flask [requirements.txt](https://github.com/ymendozahn/aws-bootcamp-cruddur-2023/blob/6427a6d4e6d7b9c5b499c9572074105f238d0135/backend-flask/requirements.txt#L12) file, in order to get install.
+2. We import the libraries and configure the logger on the [app.py](https://github.com/ymendozahn/aws-bootcamp-cruddur-2023/blob/6427a6d4e6d7b9c5b499c9572074105f238d0135/backend-flask/app.py#L30-L33) file.
+```python
+import watchtower
+import logging
+from time import strftime
+
+...
+
+LOGGER = logging.getLogger(__name__)
+LOGGER.setLevel(logging.DEBUG)
+console_handler = logging.StreamHandler()
+cw_handler = watchtower.CloudWatchLogHandler(log_group='cruddur')
+LOGGER.addHandler(console_handler)
+LOGGER.addHandler(cw_handler)
+LOGGER.info("Starting logging Backend app")
+```
+
+3. Now we can log some info on the endpoint. Here is the logging for [home.activities.py](https://github.com/ymendozahn/aws-bootcamp-cruddur-2023/blob/6427a6d4e6d7b9c5b499c9572074105f238d0135/backend-flask/services/home_activities.py#L8) file
+
+```python
+logger.info("HomeActivities")
+```
+4. Also, we have to add some environment variables to the backend part of the [docker-compose](https://github.com/ymendozahn/aws-bootcamp-cruddur-2023/blob/6427a6d4e6d7b9c5b499c9572074105f238d0135/docker-compose.yml#L13-L15) file.
+
+```dockerfile
+AWS_DEFAULT_REGION: "${AWS_DEFAULT_REGION}"
+AWS_ACCESS_KEY_ID: "${AWS_ACCESS_KEY_ID}"
+AWS_SECRET_ACCESS_KEY: "${AWS_SECRET_ACCESS_KEY}"
+```
+5. Here are my logs registering on the group for the app.
+
+ ![cloudwatch-logs](images/cloudwatchlog01.png)
+ 
+ ![cloudwatch-log-detail](images/cloudwatchlog02.png)
+ 
+ So, that's it. 
+ 
  ### Rollbar configuration
  
