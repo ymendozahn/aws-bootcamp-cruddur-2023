@@ -189,4 +189,4 @@ def rollbar_test():
  
 And that's it. 
 
-thanks :face_with_cowboy_hat: 
+thanks 🌝
