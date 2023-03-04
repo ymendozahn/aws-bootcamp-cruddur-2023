@@ -129,3 +129,64 @@ AWS_SECRET_ACCESS_KEY: "${AWS_SECRET_ACCESS_KEY}"
  
  ### Rollbar configuration
  
+ Ok, here are the step in order to trace error with rollbar.
+ 
+ 1. install the rollbar libraries to the backend by adding **rollbar** packages to the [requirements.txt](https://github.com/ymendozahn/aws-bootcamp-cruddur-2023/blob/6762ca03a676902329d3bf9fb94668c2937f3525/backend-flask/requirements.txt#L14-L15) file.
+
+2. We need to have a account in the Rollbar site and setup the SDK for flask. In order to send information to Rollbar, we add the some environment variables to the [docker-compose](https://github.com/ymendozahn/aws-bootcamp-cruddur-2023/blob/6762ca03a676902329d3bf9fb94668c2937f3525/docker-compose.yml#L16) file. **NOTE: the access token is on the setup page from the rollbar site.**
+
+ ```dockerfile
+ ROLLBAR_ACCESS_TOKEN: "my-rollbar-access-token"
+ ```
+ 
+ 3. Now we need to import and initialize the rollbar libraries on the [app.py](https://github.com/ymendozahn/aws-bootcamp-cruddur-2023/blob/6762ca03a676902329d3bf9fb94668c2937f3525/backend-flask/app.py#L35-L40) file of the backend app.
+
+```python
+from time import strftime
+import os
+import rollbar
+import rollbar.contrib.flask
+from flask import got_request_exception
+
+...
+
+# Rollbar ----------
+rollbar_access_token = os.getenv('ROLLBAR_ACCESS_TOKEN')
+@app.before_first_request
+def init_rollbar():
+    """init rollbar module"""
+    rollbar.init(
+        # access token
+        rollbar_access_token,
+        # environment name
+        'production',
+        # server root directory, makes tracebacks prettier
+        root=os.path.dirname(os.path.realpath(__file__)),
+        # flask already sets up logging
+        allow_logging_basic_config=False)
+
+    # send exceptions from `app` to rollbar, using flask's signal system.
+    got_request_exception.connect(rollbar.contrib.flask.report_exception, app)
+
+```
+4. In order to test we are going to have a new endpoint added to the [app.py](https://github.com/ymendozahn/aws-bootcamp-cruddur-2023/blob/6762ca03a676902329d3bf9fb94668c2937f3525/backend-flask/app.py#L114-L117) file
+
+```python
+@app.route('/rollbar/test')
+def rollbar_test():
+    rollbar.report_message('Hello World!', 'warning')
+    return "Hello World!"
+```
+5. Ok so now we can go to the rollbar portal see what was logged.
+
+ ![rollbar-log](images/rollbar01.png)
+
+6. So, now we are going to create a code error to the home activities page. Here is the error.
+
+ ![rollbar-error](images/rollbar02.png)
+ 
+ ![rollbar-error-detail](images/rollbar03.png)
+ 
+And that's it. 
+
+thanks :face_with_cowboy_hat: 
