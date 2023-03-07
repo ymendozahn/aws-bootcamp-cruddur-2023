@@ -125,7 +125,7 @@ AWS_SECRET_ACCESS_KEY: "${AWS_SECRET_ACCESS_KEY}"
  
  ![cloudwatch-log-detail](images/cloudwatchlog02.png)
  
-6. To be able to use **subsegments** we have to begin (inicialize) and then end (close) the subsegment. We implemented on the [user activities](https://github.com/ymendozahn/aws-bootcamp-cruddur-2023/blob/509ea42aaf7be0889d98279503c5f0d341b4a020/backend-flask/services/user_activities.py#L29-L40) page. 
+6. To be able to use **subsegments** we have to begin (inicialize) and then end (close) the subsegment. We implemented on the [user activities](https://github.com/ymendozahn/aws-bootcamp-cruddur-2023/blob/8ce80125fc18c353f84d418af32a91f3ec86641f/backend-flask/services/user_activities.py#L27-L38) page. 
 
 here is the logging.
 
